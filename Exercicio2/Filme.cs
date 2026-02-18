@@ -7,19 +7,19 @@ namespace Exercicio2
 {
     public class Filme
     {
-        public Filme(string titulo, int duracao, List<string> elenco)
+        public Filme(string titulo, int duracao)
         {
             Titulo = titulo;
             Duracao = duracao;
-            Elenco = elenco;
+            Elenco = new List<Artista>();
         }
         public string Titulo { get; }
         public int Duracao { get; }
-        public List<string> Elenco { get; set; }
+        public List<Artista> Elenco { get; }
 
-        public void MostrarInfo()
+        public void AdicionarElenco(Artista artista)
         {
-            Console.WriteLine($"O filme: {Titulo} possui duração de: {Duracao} min e tem como elenco: {string.Join(", ", Elenco)}");
+            Elenco.Add(artista);
         }
         public static void ListarFilmes(List<Filme> filmes)
         {
@@ -27,10 +27,6 @@ namespace Exercicio2
                 Console.WriteLine($"{f.Titulo} - {f.Duracao} min");
         }
 
-        public void AdicionarFilme()
-        {
-
-        }
 
     }
 }
