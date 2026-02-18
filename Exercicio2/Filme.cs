@@ -13,8 +13,8 @@ namespace Exercicio2
             Duracao = duracao;
             Elenco = elenco;
         }
-        public string Titulo { get; set; }
-        public int Duracao { get; set; }
+        public string Titulo { get; }
+        public int Duracao { get; }
         public List<string> Elenco { get; set; }
 
         public void MostrarInfo()
@@ -25,6 +25,11 @@ namespace Exercicio2
         {
             foreach (var f in filmes)
                 Console.WriteLine($"{f.Titulo} - {f.Duracao} min");
+        }
+
+        public void AdicionarFilme()
+        {
+
         }
 
     }
